@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./slices/counter";
 import homeReducer from "./slices/home";
+import globalReducer from "./slices/global";
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     home: homeReducer,
+    global: globalReducer
   }
 })
 
