@@ -1,10 +1,12 @@
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+import { toggleDarkMode } from "../../../redux/slices/global";
+
 import bookLight from "../../../assets/SVGs/book-filled-white.svg";
 import bookDark from "../../../assets/SVGs/book-filled-black.svg";
 import menuBurgerLight from "../../../assets/SVGs/menu-burger-white.svg";
 import menuBurgerDark from "../../../assets/SVGs/menu-burger-black.svg";
-import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
-import { toggleDarkMode } from "../../../redux/slices/global";
-
+import lightModeIcon from "../../../assets/SVGs/darkmode-filled-white.svg";
+import darkModeIcon from "../../../assets/SVGs/lightmode-filled-black.svg";
 
 export function NavBar() {
     const darkMode = useAppSelector(state => state.global.darkMode);
@@ -60,7 +62,7 @@ export function NavBar() {
                         </span>
                     </div>
                     <div className="group relative p-2 h-10 w-10 flex justify-center items-center mb-5 bg-slate-500 hover:bg-slate-600 dark:bg-slate-200 dark:hover:bg-slate-100 rounded-full" onClick={() => console.log('CLICKED')}>
-                        <img className="max-h-full" src={darkMode ? menuBurgerDark : menuBurgerLight} alt="Icon" onClick={handleDarkModeToggle} />
+                        <img className="max-h-full" src={darkMode ? darkModeIcon : lightModeIcon} alt="Icon" onClick={handleDarkModeToggle} />
                         <span className="absolute top-full m-1 z-50 opacity-0 sm:group-hover:opacity-0 group-hover:opacity-100 transition-opacity bg-gray-800 px-2 py-1 text-sm text-gray-100 rounded-md whitespace-nowrap">
                             {darkMode ? "Light Mode" : "Dark Mode"}
                         </span>

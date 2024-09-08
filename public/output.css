@@ -822,6 +822,10 @@ video {
   padding-top: 1.25rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -999,6 +1003,14 @@ code {
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+.dark\:border-0:where(.dark, .dark *) {
+  border-width: 0px;
+}
+
+.dark\:border-none:where(.dark, .dark *) {
+  border-style: none;
 }
 
 .dark\:border-gray-700:where(.dark, .dark *) {
