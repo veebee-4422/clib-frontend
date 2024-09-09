@@ -1,12 +1,9 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
+// import { useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
 import { NavBar } from "../../common/Navbar";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { fetchHomepageData } from "../../redux/slices/home";
 import { SideBar } from "../../common/SideBar";
-import { NavBarProps } from "../../common/interfaces";
-import { toggleDarkMode } from "../../redux/slices/global";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+// import { fetchHomepageData } from "../../redux/slices/home";
 
 import libraryLight from "../../assets/SVGs/library-filled-white.svg";
 import libraryDark from "../../assets/SVGs/library-filled-black.svg";
@@ -24,17 +21,17 @@ import browseLight from "../../assets/SVGs/browse-filled-white.svg";
 import browseDark from "../../assets/SVGs/browse-filled-black.svg";
 import lightModeIcon from "../../assets/SVGs/darkmode-filled-white.svg";
 import darkModeIcon from "../../assets/SVGs/lightmode-filled-black.svg";
+import { NavBarProps } from "../../common/interfaces";
+import { useNavigate } from "react-router-dom";
+import { toggleDarkMode } from "../../redux/slices/global";
 
-export function HomeComponent() {
+
+export function AuthComponent() {
 	const darkMode = useAppSelector(state => state.global.darkMode);
 	const loggedIn = useAppSelector(state => state.global.loggedIn);
 
 	const navigate = useNavigate();
 	const dispatch = useAppDispatch();
-
-	useEffect(() => {
-		dispatch(fetchHomepageData())
-	});
 
 	const NavBarIcons: NavBarProps = {
 		icons: [
@@ -89,9 +86,10 @@ export function HomeComponent() {
 			},
 		]
 	}
+
 	return (
 		<div className={`min-h-screen grid sm:gap-2 md-gap-3 gap-0 grid-cols-12 dark:bg-slate-950 ${darkMode ? "dark" : ""}`}>
-			<NavBar icons={NavBarIcons.icons}/>
+			<NavBar icons={NavBarIcons.icons} />
 			<div className="grid grid-rows-12 min-h-full lg:col-span-6 sm:col-span-9 col-span-10">
 				<div className="col-span-3 flex flex-col p-5 items-center justify-center border-b-[1px] dark:border-slate-600 border-slate-200">
 					<h1 className="mb-4 font-bold text-4xl dark:text-white dark:underline dark:underline-offset-8">CloneLib</h1>

@@ -6,7 +6,7 @@ export function Browse() {
 	return (
 		<Routes>
 			<Route path="/" element={<div>BROWSE HERE</div>} />
-			<Route path="/random" element={<Random />} />
+			<Route path="/genres" element={<Random />} />
 		</Routes>
 	);
 }

@@ -4,19 +4,17 @@ export const globalSlice = createSlice({
     name: "global",
     initialState: {
         darkMode: true,
+        loggedIn: false,
     },
     reducers: {
-        darkMode: (state) => {
-            state.darkMode = true;
-        },
-        lightMode: (state) => {
-            state.darkMode = false;
-        },
         toggleDarkMode: (state) => {
             state.darkMode = !state.darkMode;
+        },
+        toggleLoggedIn: (state) => {
+            state.loggedIn = !state.loggedIn;
         },
     },
 })
 
-export const { darkMode, lightMode, toggleDarkMode } = globalSlice.actions;
+export const { toggleDarkMode, toggleLoggedIn } = globalSlice.actions;
 export default globalSlice.reducer;
