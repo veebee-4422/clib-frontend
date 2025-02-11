@@ -24,6 +24,7 @@ import browseLight from "../../assets/SVGs/browse-filled-white.svg";
 import browseDark from "../../assets/SVGs/browse-filled-black.svg";
 import lightModeIcon from "../../assets/SVGs/darkmode-filled-white.svg";
 import darkModeIcon from "../../assets/SVGs/lightmode-filled-black.svg";
+import { Footer } from "../../common/Footer";
 
 export function HomeComponent() {
 	const darkMode = useAppSelector(state => state.global.darkMode);
@@ -90,15 +91,18 @@ export function HomeComponent() {
 		]
 	}
 	return (
-		<div className={`min-h-screen grid sm:gap-2 md-gap-3 gap-0 grid-cols-12 dark:bg-slate-950 ${darkMode ? "dark" : ""}`}>
-			<NavBar icons={NavBarIcons.icons}/>
-			<div className="grid grid-rows-12 min-h-full lg:col-span-6 sm:col-span-9 col-span-10">
-				<div className="col-span-3 flex flex-col p-5 items-center justify-center border-b-[1px] dark:border-slate-600 border-slate-200">
-					<h1 className="mb-4 font-bold text-4xl dark:text-white dark:underline dark:underline-offset-8">CloneLib</h1>
-					<h3 className="mb-4 font-bold text-xl dark:text-white">Your very own personal library lorem lorem blah blah</h3>
+		<div className="min-h-screen flex flex-col">
+			<div className={`flex-grow grid sm:gap-2 md-gap-3 gap-0 grid-cols-12 dark:bg-slate-950 ${darkMode ? "dark" : ""}`}>
+				<NavBar icons={NavBarIcons.icons} />
+				<div className="lg:col-span-6 sm:col-span-9 col-span-10">
+					<div className="flex flex-col p-2 items-center justify-center border-b-[1px] dark:border-slate-600 border-slate-200">
+						<h1 className="mb-3 font-bold text-4xl dark:text-white dark:underline dark:underline-offset-8">CloneLib</h1>
+						<h3 className="mb-3 font-bold text-xl dark:text-white">Your very own personal library lorem lorem blah blah</h3>
+					</div>
 				</div>
+				<SideBar />
 			</div>
-			<SideBar />
+			<Footer />
 		</div>
 	);
 }

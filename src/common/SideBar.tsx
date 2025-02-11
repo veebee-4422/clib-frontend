@@ -1,12 +1,11 @@
 import { useAppSelector } from "../redux/hooks";
 import { SideBarRec } from "../common/subComponents/SideBarRec";
 
-
 export function SideBar() {
     const apiData = useAppSelector(state => state.home.homepageData);
     return (
         <div className="lg:flex lg:flex-col hidden min-h-full p-5 lg:col-span-3 items-center border-x-[1px] dark:border-slate-600 border-slate-200">
-            <div className="max-h-32 w-full p-5 mb-5 bg-white border border-gray-200 rounded-lg dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-none">
+            <div className="max-h-32 w-full p-5 mb-5 bg-white border border-slate-200 rounded-lg dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:border-none">
                 <h5 className="text-xl font-bold text-center dark:text-white truncate">
                     Today's Recommendations:
                 </h5>

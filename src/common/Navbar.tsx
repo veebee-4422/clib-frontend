@@ -12,7 +12,7 @@ export function NavBar({ icons }: NavBarProps) {
     const navigate = useNavigate();
 
     return (
-        <div className="min-h-full p-2 md:col-span-3 sm:col-span-3 col-span-2 border-x-[1px] dark:border-slate-600 border-slate-200">
+        <div className="min-h-full p-2 md:col-span-3 col-span-2 border-x-[1px] dark:border-slate-600 border-slate-200">
             <div className="min-h-full grid grid-cols-6">
                 <div className="py-5 mx-1 lg:mx-2 flex items-center flex-col col-start-1 col-end-7 md:col-start-1 md:col-end-3 lg:col-start-2 lg-col-end-4">
                     <div className="group relative p-2 h-10 w-10 flex justify-center items-center mb-5 bg-slate-500 hover:bg-slate-600 dark:bg-slate-200 dark:hover:bg-slate-100 rounded-full" onClick={() => navigate("/")}>
